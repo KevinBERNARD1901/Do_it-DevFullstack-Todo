@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.task-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
+}
+
+.todo-item {
+  flex: 1 1 25%;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px black;
+  transition: transform 0.2s;
+}
+
+.todo-item:hover {
+  transform: scale(1.05);
+}
+
+.todo-item h3 {
+  margin-top: 0;
+  font-size: 1.5em;
+  color: black;
+}
+
+.todo-item p {
+  color: grey;
+}
+
+.todo-item .button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.todo-item .button-container button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.todo-item .button-container .done {
+  background-color: green;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-item .button-container .done:hover {
+  background-color: darkgreen;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-item .button-container .todo {
+  background-color: orange;
+  color: white;
+}
+
+.todo-item .button-container .todo:hover {
+  background-color: darkorange;
+}
+
+.todo-item .button-container .remove {
+  background-color: red;
+  color: white;
+}
+
+.todo-item .button-container .remove:hover {
+  background-color: darkred;
+}
+
+.task-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.task-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  flex: 1;
+  max-width: 300px;
+}
+
+.task-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.task-button:hover {
+  background-color: darkblue;
+}
+
+.error-message {
+  position: fixed;
+  bottom: 20px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: lightpink;
+  color: red;
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: bold;
 }
